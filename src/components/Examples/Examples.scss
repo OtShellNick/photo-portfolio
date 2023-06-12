@@ -1,5 +1,40 @@
 .examples {
-    height: 100vh;
-    background-color: antiquewhite;
+    height: 80vh;
+    padding-top: 20vh;
     scroll-snap-align: center;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2vw;
+    }
+
+    &__slide {
+        position: relative;
+        width: 27vw;
+        height: 75vh;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        border: 1px solid gray;
+
+        &_text {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+    }
+
+    & swiper-container {
+        padding: 0 1vw 0 3vw;
+
+        & .swiper-button-prev, .swiper-button-next {
+            &::after {
+                color: var(--white) !important;
+            }
+        }
+    }
 }
