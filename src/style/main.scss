@@ -43,3 +43,30 @@ li {
 ul {
     list-style-type: none;
 }
+
+.ReactModal__Content {
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+    transition: all 500ms ease-in-out;
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+    z-index: 3;
+  }
+  
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+
+    & .ReactModal__Content--after-open {
+        transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    }
+  }
+  
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+    
+    & .ReactModal__Content--before-close {
+        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+    }
+  }

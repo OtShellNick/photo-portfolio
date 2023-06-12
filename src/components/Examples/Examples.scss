@@ -3,12 +3,6 @@
     padding-top: 20vh;
     scroll-snap-align: center;
 
-    &__wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 2vw;
-    }
-
     &__slide {
         position: relative;
         width: 27vw;
