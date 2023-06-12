@@ -1,6 +1,7 @@
 import React from "react";
 
 import SelfPhoto from '@assets/3.webp';
+import MarkIcon from '@assets/mark.svg?jsx';
 
 import './Description.scss';
 
@@ -15,13 +16,27 @@ const Description = () => {
             </p>
             <h2 className="description__content_heading">Что снимаю</h2>
             <ul className="description__content_list">
-                <li className="description__content_item">Контент для Instagram</li>
-                <li className="description__content_item">Женский портрет</li>
-                <li className="description__content_item">LoveStory</li>
-                <li className="description__content_item">Короткие видео для Instagram и TicTok</li>
-                <li className="description__content_item">Каталог</li>
-                <li className="description__content_item">LookBook</li>
-                <li className="description__content_item">Модельные тесты</li>
+                <li className="description__content_item">
+                    <MarkIcon className='description__content_item_mark' /> Контент для Instagram
+                </li>
+                <li className="description__content_item">
+                    <MarkIcon className='description__content_item_mark' /> Женский портрет
+                </li>
+                <li className="description__content_item">
+                    <MarkIcon className='description__content_item_mark' /> LoveStory
+                </li>
+                <li className="description__content_item">
+                    <MarkIcon className='description__content_item_mark' /> Короткие видео для Instagram и TicTok
+                </li>
+                <li className="description__content_item">
+                    <MarkIcon className='description__content_item_mark' /> Каталог
+                </li>
+                <li className="description__content_item">
+                    <MarkIcon className='description__content_item_mark' /> LookBook
+                </li>
+                <li className="description__content_item">
+                    <MarkIcon className='description__content_item_mark' /> Модельные тесты
+                </li>
             </ul>
         </div>
     </div>

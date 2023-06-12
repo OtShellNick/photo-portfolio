@@ -34,10 +34,18 @@
         }
 
         &_item {
+            display: flex;
+            gap: 10px;
             font-size: 20px;
 
             &:not(:last-child) {
                 margin-bottom: 5px;
+            }
+
+            &_mark {
+                width: 24px;
+                height: 24px;
+                fill: var(--white);
             }
         }
     }
