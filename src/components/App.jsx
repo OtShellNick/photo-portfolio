@@ -13,7 +13,7 @@ const App = () => {
 
     return <>
         <Header />
-        <main>
+        <main className="main" dir="ltr">
             <Preview />
             <Description />
             <Examples />

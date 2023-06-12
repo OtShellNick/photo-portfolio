@@ -4,7 +4,7 @@ import './Examples.scss';
 
 const Examples = () => {
 
-    return <div>Examples</div>
+    return <div className='examples'>Examples</div>
 };
 
 export default Examples;

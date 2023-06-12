@@ -4,7 +4,7 @@ import './Packets.scss';
 
 const Packets = () => {
 
-    return <div>Packets</div>
+    return <div className="packets">Packets</div>
 };
 
 export default Packets;

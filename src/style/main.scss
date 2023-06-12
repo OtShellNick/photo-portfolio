@@ -10,6 +10,17 @@
     color: var(--white);
     font-family: 'IBM Plex Serif', serif;
     font-weight: 400;
+    background-color: var(--background-body);
+}
+
+.main {
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 h1, 

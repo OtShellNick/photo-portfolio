@@ -4,7 +4,7 @@ import './Reviews.scss';
 
 const Reviews = () => {
 
-    return <div>Reviews</div>
+    return <div className='reviews'>Reviews</div>
 };
 
 export default Reviews;

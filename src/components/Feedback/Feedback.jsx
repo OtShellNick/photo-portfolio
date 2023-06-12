@@ -4,7 +4,7 @@ import './Feedback.scss';
 
 const Feedback = () => {
 
-    return <div>Feedback</div>
+    return <div className='feedback'>Feedback</div>
 };
 
 export default Feedback;
