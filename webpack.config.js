@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const FontPreloadPlugin = require('webpack-font-preload-plugin');
 
 const { NODE_ENV } = process.env;
 const IsDev = NODE_ENV === 'development';
@@ -46,11 +48,17 @@ const jsLoaders = () => {
 };
 
 const plugins = () => [
-
+    new FaviconsWebpackPlugin({
+        logo: path.resolve(__dirname, './src/assets/favicon.png'),
+        prefix: 'icons-[fullhash]/',
+    }),
     new HTMLWebpackPlugin({
         template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
+    new FontPreloadPlugin({
+        loadType: 'preload',
+    }),
     new MiniCssExtractPlugin({
         filename: filename('css'),
     }),

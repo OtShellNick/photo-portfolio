@@ -1,0 +1,30 @@
+@import 'colors';
+@import 'fonts';
+
+.container {
+    margin: 0 auto;
+    width: 1400px;
+}
+
+#root {
+    color: var(--white);
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
