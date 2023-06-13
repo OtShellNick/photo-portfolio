@@ -8,6 +8,7 @@ import App from '@components/App';
 import { store } from '@store/mainStore';
 
 import 'normalize.css';
+import "react-datepicker/dist/react-datepicker.css";
 import '@style/main.scss';
 
 const container = document.getElementById('root');
