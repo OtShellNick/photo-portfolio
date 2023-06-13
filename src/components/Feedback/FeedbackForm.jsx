@@ -58,8 +58,13 @@ const FeedbackForm = () => {
             onChange={(e) => formik.setFieldValue('date', Date.parse(e))}
             inline
         />
-        <textarea name="message" id="message" cols="30" rows="5" />
-        <button type='submit'>Отправить</button>
+        <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="5"
+            placeholder='Ваше сообщение' />
+        <button className='feedback__form_btn' type='submit'>Отправить</button>
     </form>
 };
 
