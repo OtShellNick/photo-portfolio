@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Preview.scss';
 
-const Preview = () => {
+const Preview = ({ ref }) => {
 
     return <div className='preview'>
         <div className='container preview__content'>

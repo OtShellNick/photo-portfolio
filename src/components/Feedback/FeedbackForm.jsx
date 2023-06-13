@@ -13,8 +13,9 @@ const FeedbackForm = () => {
             date: Date.now(),
             message: ''
         },
-        onSubmit: values => {
+        onSubmit: (values, { resetForm }) => {
             console.log(values);
+            resetForm();
         },
     });
 

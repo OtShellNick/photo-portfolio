@@ -11,13 +11,13 @@ import PhoneIcon from '@assets/social/phone.svg?jsx';
 
 import './Footer.scss';
 
-const Footer = () => {
+const Footer = ({ scrollTo, feedbackRef, previewRef }) => {
 
     return <footer className='footer'>
         <div className="footer__wrapper container">
             <div className="footer__logo">
                 <div className="footer__logo_wrapper">
-                    <LogoIcon className='footer__logo_icon' />
+                    <LogoIcon className='footer__logo_icon' onClick={() => scrollTo(previewRef)} />
                     <div>
                         <h1 className="footer__logo_name">ария Леонидова</h1>
                         <p style={{ fontSize: 10 }}>фотограф в Санкт- Петербурге</p>
@@ -62,7 +62,7 @@ const Footer = () => {
                     </a>
                 </li>
             </ul>
-            <button className='footer__callback'>Обратная связь</button>
+            <button className='footer__callback' onClick={() => scrollTo(feedbackRef)}>Обратная связь</button>
         </div>
     </footer>
 };

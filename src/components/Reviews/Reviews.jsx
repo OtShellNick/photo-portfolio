@@ -100,7 +100,7 @@ const Reviews = () => {
             <div className='reviews__modal'>
                 <CloseIcon className='packets__modal_close' onClick={() => setIsOpen(false)} />
                 <h1 className="packets__modal_heading">Оставить отзыв</h1>
-                <ReviewForm />
+                <ReviewForm closeForm={() => setIsOpen(false)} />
             </div>
         </Modal>
         <h1 className='reviews__heading'>Отзывы</h1>
@@ -111,8 +111,8 @@ const Reviews = () => {
             speed="500"
             loop="true"
             style={{ width: '96%' }}>
-            {REVIEWS.map(({ name, avatar, review }) => {
-                return <swiper-slide>
+            {REVIEWS.map(({ name, avatar, review }, index) => {
+                return <swiper-slide key={name + index}>
                     <div className='reviews__card'>
                         <div className='reviews__card_bio'>
                             {avatar}

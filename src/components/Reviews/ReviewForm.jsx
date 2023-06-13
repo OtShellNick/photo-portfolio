@@ -1,21 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { useFormik } from 'formik';
-import Cropper, { ReactCropperElement } from "react-cropper";
 
 import "cropperjs/dist/cropper.css";
 
-const defaultSrc = "https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg";
-
-const ReviewForm = () => {
+const ReviewForm = ({ closeForm }) => {
     const cropperRef = useRef(null);
-    const [image, setImage] = useState(defaultSrc);
-    const [cropData, setCropData] = useState("#");
-
-    const getCropData = () => {
-        if (typeof cropperRef.current?.cropper !== "undefined") {
-            setCropData(cropperRef.current?.cropper.getCroppedCanvas().toDataURL());
-        }
-    };
+    const [image, setImage] = useState(null);
 
     const onChange = (e) => {
         e.preventDefault();
@@ -35,58 +25,45 @@ const ReviewForm = () => {
     const formik = useFormik({
         initialValues: {
             name: '',
-            avatar: [],
-            email: '',
+            avatar: '',
+            text: '',
         },
-        onSubmit: values => {
+        onSubmit: (values, { resetForm }) => {
             alert(JSON.stringify(values, null, 2));
+            resetForm();
+            closeForm();
         },
     });
 
-    return <form onSubmit={formik.handleSubmit}>
+    return <form className="reviews__modal_form" onSubmit={formik.handleSubmit}>
         <input
             id="name"
             name="name"
             onChange={formik.handleChange}
             placeholder='Ваше имя'
         />
-        <Cropper
-            ref={cropperRef}
-            style={{ height: 400, width: "100%" }}
-            zoomTo={0.5}
-            initialAspectRatio={1}
-            preview=".img-preview"
-            src={image}
-            viewMode={1}
-            minCropBoxHeight={10}
-            minCropBoxWidth={10}
-            background={false}
-            responsive={true}
-            autoCropArea={1}
-            checkOrientation={false}
-            guides={true}
-        />
-        {/* <div
-            className="img-preview"
-            style={{ width: "100%", float: "left", height: "300px" }}
-        /> */}
-        <input
-            id="avatar"
-            name="avatar"
-            type="file"
-            onChange={(event) => {
-                formik.setFieldValue("avatar", event.currentTarget.files[0]);
-            }}
-            placeholder='Ваш аватар'
-        />
-        <input
+        <textarea
             id="text"
             name="text"
             type="textarea"
+            rows={5}
             onChange={formik.handleChange}
             placeholder='Ваше сообщение'
         />
-        <button type="submit">Submit</button>
+        <div className="img-preview">
+            {image && <img src={image} alt="image" />}
+            <input
+                id="avatar"
+                name="avatar"
+                type="file"
+                onChange={(event) => {
+                    formik.setFieldValue("avatar", event);
+                    onChange(event);
+                }}
+                placeholder='Ваш аватар'
+            />
+        </div>
+        <button className="reviews__modal_form_btn" type="submit">Отправить</button>
     </form>
 };
 

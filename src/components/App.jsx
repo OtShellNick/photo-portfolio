@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { register } from 'swiper/element/bundle';
 
 import Header from "@components/Header/Header";
@@ -13,18 +13,47 @@ import Footer from "@components/Footer/Footer";
 register();
 
 const App = () => {
+    const previewRef = useRef(null);
+    const descRef = useRef(null);
+    const exampleRef = useRef(null);
+    const packetsRef = useRef(null);
+    const reviewsRef = useRef(null);
+    const feedbackRef = useRef(null);
+
+    function scrollTo(section) {
+        section.current.scrollIntoView({ behavior: "smooth" });
+    }
 
     return <>
-        <Header />
+        <Header scrollTo={scrollTo} links={{
+            previewRef,
+            descRef,
+            exampleRef,
+            packetsRef,
+            reviewsRef,
+            feedbackRef
+        }} />
         <main className="main" dir="ltr">
-            <Preview />
-            <Description />
-            <Examples />
-            <Packets />
-            <Reviews />
-            <Feedback />
+            <div ref={previewRef}>
+                <Preview />
+            </div>
+            <div ref={descRef}>
+                <Description />
+            </div>
+            <div ref={exampleRef}>
+                <Examples />
+            </div>
+            <div ref={packetsRef}>
+                <Packets />
+            </div>
+            <div ref={reviewsRef}>
+                <Reviews />
+            </div>
+            <div ref={feedbackRef}>
+                <Feedback />
+            </div>
         </main>
-        <Footer />
+        <Footer scrollTo={scrollTo} previewRef={previewRef} feedbackRef={feedbackRef} />
     </>
 };
 
