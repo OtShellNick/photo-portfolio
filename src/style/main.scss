@@ -1,9 +1,30 @@
 @import 'colors';
 @import 'fonts';
+@import 'size-pages';
 
 .container {
     margin: 0 auto;
     width: 1400px;
+
+    @include size-page('desctop-mid') {
+        width: 1000px;
+	}
+
+    @include size-page('desctop-min') {
+        width: 1000px;
+	}
+
+    @include size-page('tablet-big') {
+        width: 700px;
+	}
+
+    @include size-page('tablet') {
+        width: 600px;
+	}
+
+    @include size-page('phone-hd-max') {
+        width: calc(100vw - 10px);
+	}
 }
 
 #root {

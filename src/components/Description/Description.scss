@@ -1,3 +1,5 @@
+@import '@style/size-pages';
+
 .description {
     height: 93vh;
     padding-bottom: 7vh;
@@ -7,26 +9,115 @@
     align-items: flex-end;
     gap: 5vw;
 
+    @include size-page('tablet-big') {
+        align-items: center;
+	}
+
+    @include size-page('tablet') {
+        align-items: center;
+	}
+
+    @include size-page('phone-hd-max') {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 10px;
+        padding: 10vh 0;
+        height: 80vh;
+	}
+
     &__img {
         max-height: 80vh;
         border-radius: 10px;
         border: 1px solid gray;
+
+        @include size-page('phone-hd-max') {
+            height: 35vh;
+        }
+
+        @include size-page('tablet') {
+            height: 35vh;
+        }
+
+        @include size-page('tablet-big') {
+            height: 40vh;
+        }
     }
 
     &__content {
         height: 80vh;
         padding-right: 10vw;
 
+        @include size-page('phone-hd-max') {
+            height: 20vh;
+        }
+
+        @include size-page('tablet') {
+            height: 50vh;
+            padding-right: 0;
+        }
+
+        @include size-page('tablet-big') {
+            height: 50vh;
+            padding-right: 0;
+        }
+
+        @include size-page('desctop-min') {
+            padding-right: 0;
+        }
+
+        @include size-page('desctop-mid') {
+            padding-right: 0;
+        }
+
         &_heading {
             font-weight: 600;
             font-size: 36px;
             margin-bottom: 20px;
+
+            @include size-page('phone-hd-max') {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            @include size-page('tablet') {
+                font-size: 30px;
+                margin-bottom: 5px;
+            }
+
+            @include size-page('tablet-big') {
+                font-size: 30px;
+                margin-bottom: 5px;
+            }
         }
 
         &_text {
             font-size: 20px;
             margin-bottom: 20px;
             padding-left: 20px;
+
+            @include size-page('phone-hd-max') {
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+
+            @include size-page('tablet') {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+            @include size-page('tablet-big') {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            @include size-page('desctop-min') {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            @include size-page('desctop-mid') {
+                font-size: 18px;
+            }
         }
 
         &_list {
@@ -38,6 +129,30 @@
             gap: 10px;
             font-size: 20px;
 
+            @include size-page('phone-hd-max') {
+                font-size: 12px;
+                gap: 3px;
+            }
+
+            @include size-page('tablet') {
+                font-size: 14px;
+                gap: 3px;
+            }
+
+            @include size-page('tablet-big') {
+                font-size: 16px;
+                gap: 5px;
+            }
+
+            @include size-page('desctop-min') {
+                font-size: 18px;
+                gap: 5px;
+            }
+
+            @include size-page('desctop-mid') {
+                font-size: 18px;
+            }
+
             &:not(:last-child) {
                 margin-bottom: 5px;
             }
@@ -46,6 +161,16 @@
                 width: 24px;
                 height: 24px;
                 fill: var(--white);
+
+                @include size-page('phone-hd-max') {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                @include size-page('tablet') {
+                    width: 16px;
+                    height: 16px;
+                }
             }
         }
     }

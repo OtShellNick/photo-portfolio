@@ -1,3 +1,5 @@
+@import '@style/size-pages';
+
 .preview {
     width: 100vw;
     height: 100vh;
@@ -7,19 +9,49 @@
     background-position: 0 -30vh;
     scroll-snap-align: center;
 
+    @include size-page('desctop-min') {
+        background-position: 0 -15vh;
+	}
+
+    @include size-page('tablet-big') {
+        background-position: 0 -10vh;
+	}
+
+    @include size-page('tablet') {
+        background-size: cover;
+        background-position: 0 0vh;
+	}
+
+    @include size-page('phone-hd-max') {
+        background-size: cover;
+        background-position: 0 0;
+	}
+
     &__content {
         padding: 65vh 0 0 0;
 
         &_text-first {
             font-size: 50px;
+
+            @include size-page('phone-hd-max') {
+                font-size: 40px;
+            }
         }
 
         &_text-second {
             font-size: 40px;
+
+            @include size-page('phone-hd-max') {
+                font-size: 30px;
+            }
         }
 
         &_text-third {
             font-size: 30px;
+
+            @include size-page('phone-hd-max') {
+                font-size: 20px;
+            }
         }
     }
 }

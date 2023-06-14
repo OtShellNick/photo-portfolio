@@ -20,6 +20,10 @@ const Header = ({ scrollTo, links }) => {
                 </div>
 
             </div>
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
             <ul className="header__menu">
                 <li className="header__menu_item" onClick={() => scrollTo(links.descRef)}>Обо мне</li>
                 <li className="header__menu_item" onClick={() => scrollTo(links.exampleRef)}>Портфолио</li>
