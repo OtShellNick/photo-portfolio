@@ -1,10 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 
-import "cropperjs/dist/cropper.css";
+import UploadIcon from '@assets/upload.svg?jsx';
 
 const ReviewForm = ({ closeForm }) => {
-    const cropperRef = useRef(null);
     const [image, setImage] = useState(null);
 
     const onChange = (e) => {
@@ -51,7 +50,12 @@ const ReviewForm = ({ closeForm }) => {
             placeholder='Ваше сообщение'
         />
         <div className="img-preview">
+            {!image && <div />}
             {image && <img src={image} alt="image" />}
+            <label htmlFor="avatar">
+                <UploadIcon />
+                <span>Ваш аватар</span>
+            </label>
             <input
                 id="avatar"
                 name="avatar"

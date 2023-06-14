@@ -101,6 +101,62 @@
                     background-color: darken($color: #7D6F66, $amount: 5%);
                 }
             }
+
+            & .img-preview {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 60px 200px 0;
+                gap: 10px;
+
+                & img {
+                    width: 60px;
+                    height: auto;
+                    border-radius: 10px;
+                    border: 1px solid gray;
+                }
+
+                & input {
+                    display: none;
+                    width: 0.1px;
+                    height: 0.1px;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: -1;
+                }
+
+                & label {
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #fff;
+                    font-size: 14px;
+                    padding: 10px 12px;
+                    background-color: #7D6F66;
+                    border: 1px solid gray;
+                    transition: all .2s linear;
+                    font-size: 18px;
+                    text-align: center;
+
+                    &:hover {
+                        background-color: darken($color: #7D6F66, $amount: 5%);
+                    }
+
+                    & svg {
+                        width: 18px;
+                        height: 18px;
+                        margin-right: 4px;
+                        
+                        & path {
+                            fill: var(--white);
+                        }
+                    }
+                }
+            }
         }
     }
 
