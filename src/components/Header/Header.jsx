@@ -21,7 +21,7 @@ const Header = ({ scrollTo, links }) => {
 
             </div>
             <input id="menu__toggle" type="checkbox" />
-            <label class="menu__btn" for="menu__toggle">
+            <label className="menu__btn" htmlFor="menu__toggle">
                 <span></span>
             </label>
             <ul className="header__menu">
@@ -31,7 +31,7 @@ const Header = ({ scrollTo, links }) => {
                 <li className="header__menu_item" onClick={() => scrollTo(links.feedbackRef)}>Заказ</li>
             </ul>
         </div>
-    </header>
+    </header >
 };
 
 export default Header;

@@ -1,7 +1,14 @@
+@import '@style/size-pages';
+
 .examples {
     height: 83vh;
     padding-top: 17vh;
     scroll-snap-align: center;
+
+    @include size-page('phone-hd-max') {
+        height: 88vh;
+        padding-top: 12vh;
+    }
 
     &__slide {
         position: relative;
@@ -11,6 +18,31 @@
         background-position: center;
         border-radius: 10px;
         border: 1px solid gray;
+
+        @include size-page('desctop-mid') {
+            width: 290px;
+            margin: 0 auto;
+        }
+    
+        @include size-page('desctop-min') {
+            width: 290px;
+            margin: 0 auto;
+        }
+
+        @include size-page('tablet-big') {
+            width: 300px;
+            margin: 0 auto;
+        }
+    
+        @include size-page('tablet') {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        @include size-page('phone-hd-max') {
+            width: 300px;
+            margin: 0 auto;
+        }
 
         &_text {
             position: absolute;
@@ -24,6 +56,26 @@
 
     & swiper-container {
         padding: 0 1vw 0 3vw;
+
+        @include size-page('desctop-mid') {
+            padding: 0 3vw 0 4vw;
+        }
+    
+        @include size-page('desctop-min') {
+            padding: 0 4vw 0 4vw;
+        }
+
+        @include size-page('tablet-big') {
+            padding: 0 5vw 0 5vw;
+        }
+    
+        @include size-page('tablet') {
+            padding: 0;
+        }
+
+        @include size-page('phone-hd-max') {
+            padding: 0;
+        }
 
         & .swiper-button-prev, .swiper-button-next {
             &::after {

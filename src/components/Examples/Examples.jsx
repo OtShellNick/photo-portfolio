@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import FirstPortrait from '@assets/first_portrait.webp';
 import SecondPortrait from '@assets/second_portrait.webp';
@@ -52,14 +52,36 @@ const PHOTOS = [
         alt: 'third',
         text: 'Прогулка'
     },
-]
+];
 
 const Examples = () => {
+    const swiperEl = useRef(null);
+    useEffect(() => {
+
+        const swiperParams = {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        };
+
+        Object.assign(swiperEl.current, swiperParams);
+        swiperEl.current.initialize();
+    }, [])
 
     return <div className='examples container'>
         <swiper-container
-            slides-per-view="3"
+            ref={swiperEl}
+            init="false"
             navigation="true"
+            touch='true'
+            pagination='true'
             css-mode="true"
             speed="500"
             loop="true">
