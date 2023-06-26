@@ -5,7 +5,7 @@
     scroll-snap-align: center;
 
     @include size-page('phone-hd-max') {
-        padding-bottom: 8vh;
+        padding-bottom: calc(4vh + 30px);
     }
 
     &__wrapper {

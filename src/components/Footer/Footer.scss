@@ -9,6 +9,14 @@
     background-color: #7d6f6632;
     z-index: 2;
 
+    @include size-page('tablet') {
+        height: 30px;
+    }
+
+    @include size-page('phone-hd-max') {
+        height: 30px;
+    }
+
     &__wrapper {
         display: grid;
         grid-template-columns: 25vw 1fr 10vw;
