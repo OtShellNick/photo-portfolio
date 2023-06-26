@@ -19,9 +19,9 @@
 
     @include size-page('phone-hd-max') {
         flex-direction: column-reverse;
-        gap: 10px;
-        padding: 9vh 0 13vh 0;
-        height: 78vh;
+        gap: 15px;
+        padding: 75px 0 55px 0;
+        height: calc(100vh - (55px + 75px));
 	}
 
     &__img {
@@ -30,7 +30,7 @@
         border: 1px solid gray;
 
         @include size-page('phone-hd-max') {
-            height: 40vh;
+            height: 45vh;
         }
 
         @include size-page('tablet') {
