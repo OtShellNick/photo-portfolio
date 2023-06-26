@@ -20,8 +20,8 @@
     @include size-page('phone-hd-max') {
         flex-direction: column-reverse;
         gap: 10px;
-        padding: 7vh 0 13vh 0;
-        height: 80vh;
+        padding: 9vh 0 13vh 0;
+        height: 78vh;
 	}
 
     &__img {
