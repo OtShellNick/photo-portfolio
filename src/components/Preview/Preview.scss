@@ -33,7 +33,7 @@
         &_text-first {
             font-size: 50px;
             transform: translateX(-100%);
-            transition: all .5s linear;
+            transition: all .8s linear;
 
             @include size-page('phone-hd-max') {
                 font-size: 40px;
@@ -43,7 +43,7 @@
         &_text-second {
             font-size: 40px;
             transform: translateX(-100%);
-            transition: all .5s linear;
+            transition: all .8s linear;
 
             @include size-page('phone-hd-max') {
                 font-size: 30px;
@@ -53,7 +53,7 @@
         &_text-third {
             font-size: 30px;
             transform: translateX(-100%);
-            transition: all .5s linear;
+            transition: all .8s linear;
 
             @include size-page('phone-hd-max') {
                 font-size: 20px;
