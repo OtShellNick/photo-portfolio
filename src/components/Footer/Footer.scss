@@ -46,7 +46,7 @@
 
         @include size-page('phone-hd-max') {
             max-width: initial;
-            font-size: 14px;
+            font-size: 8px;
         }
     }
 
@@ -72,8 +72,8 @@
             }
 
             @include size-page('phone-hd-max') {
-                width: 14px;
-                height: 14px;
+                width: 20px;
+                height: 20px;
             }
 
             &:hover {
@@ -91,6 +91,12 @@
 
             @include size-page('phone-hd-max') {
                 font-size: 12px;
+            }
+        }
+
+        &_sub {
+            @include size-page('phone-hd-max') {
+                font-size: 6px !important;
             }
         }
     }

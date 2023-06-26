@@ -20,7 +20,7 @@ const Footer = ({ scrollTo, feedbackRef, previewRef }) => {
                     <LogoIcon className='footer__logo_icon' onClick={() => scrollTo(previewRef)} />
                     <div>
                         <h1 className="footer__logo_name">ария Леонидова</h1>
-                        <p style={{ fontSize: 10 }}>фотограф в Санкт- Петербурге</p>
+                        <p className="footer__logo_sub" style={{ fontSize: 10 }}>фотограф в Санкт- Петербурге</p>
                     </div>
                 </div>
 

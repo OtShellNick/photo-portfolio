@@ -5,7 +5,7 @@
     scroll-snap-align: center;
 
     @include size-page('phone-hd-max') {
-        padding-bottom: calc(4vh + 30px);
+        padding-bottom: calc(2vh + 30px);
     }
 
     &__wrapper {
@@ -33,7 +33,7 @@
         @include size-page('phone-hd-max') {
             flex-direction: row;
             max-width: initial;
-            font-size: 16px;
+            font-size: 14px;
         }
     }
 
