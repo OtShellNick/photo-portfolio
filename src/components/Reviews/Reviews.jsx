@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Modal from 'react-modal';
 
 import ReviewForm from './ReviewForm';
@@ -27,7 +27,7 @@ const REVIEWS = [
     {
         name: 'Test4',
         avatar: <IconMen className='reviews__card_avatar' />,
-        review: 'Lorem ipsum dolor sit amet, consectetur adip temp dolor sit am commodo'
+        review: 'Lorem ipsum dolor sit amet, consectetur adip temp dolor sit am commodo, Lorem ipsum dolor sit amet, consectetur adip temp dolor sit am commodo'
     },
     {
         name: 'Test5',
@@ -63,6 +63,25 @@ const REVIEWS = [
 
 const Reviews = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const swiper = useRef(null);
+
+    useEffect(() => {
+        const swiperParams = {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        };
+
+        Object.assign(swiper.current, swiperParams);
+        swiper.current.initialize();
+    }, [])
 
     const modalStyles = {
         overlay: {
@@ -105,7 +124,8 @@ const Reviews = () => {
         </Modal>
         <h1 className='reviews__heading'>Отзывы</h1>
         <swiper-container
-            slides-per-view="3"
+            ref={swiper}
+            init="false"
             navigation="true"
             css-mode="true"
             speed="500"
