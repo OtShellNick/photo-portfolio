@@ -1,5 +1,6 @@
+@import '@style/size-pages';
+
 .footer {
-    display: none;
     position: absolute;
     bottom: 0;
     height: 40px;
@@ -11,6 +12,14 @@
     &__wrapper {
         display: grid;
         grid-template-columns: 25vw 1fr 10vw;
+
+        @include size-page('tablet') {
+            grid-template-columns: 35vw 1fr 20vw;
+        }
+
+        @include size-page('phone-hd-max') {
+            grid-template-columns: 35vw 1fr 20vw;
+        }
     }
 
     &__callback {
@@ -21,6 +30,16 @@
         outline: none;
         border-radius: 10px;
         border: 1px solid gray;
+
+        @include size-page('tablet') {
+            max-width: initial;
+            font-size: 14px;
+        }
+
+        @include size-page('phone-hd-max') {
+            max-width: initial;
+            font-size: 14px;
+        }
     }
 
     &__logo {
@@ -39,6 +58,16 @@
             cursor: pointer;
             transition: all .2s linear;
 
+            @include size-page('tablet') {
+                width: 32px;
+                height: 32px;
+            }
+
+            @include size-page('phone-hd-max') {
+                width: 14px;
+                height: 14px;
+            }
+
             &:hover {
                 fill: darken($color: #FFFFFF, $amount: 30%);
                 transform: scale(1.15);
@@ -47,6 +76,14 @@
 
         &_name {
             font-size: 20px;
+
+            @include size-page('tablet') {
+                font-size: 16px;
+            }
+
+            @include size-page('phone-hd-max') {
+                font-size: 12px;
+            }
         }
     }
 
@@ -56,12 +93,26 @@
         align-items: center;
         padding-left: 9vw;
 
+        @include size-page('tablet') {
+            padding-left: 1vw;
+            padding-right: 1vw;
+        }
+
+        @include size-page('phone-hd-max') {
+            padding-left: 1vw;
+        }
+
         &_item {
 
             & svg {
                 width: 24px;
                 height: 24px;
                 fill: var(--white);
+
+                @include size-page('phone-hd-max') {
+                    width: 16px;
+                    height: 16px;
+                }
             }
         }
     }
