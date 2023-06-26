@@ -105,13 +105,16 @@
 
             @include size-page('tablet-big') {
                 height: 60px;
+                height: 60px;
             }
 
             @include size-page('tablet') {
+                width: 40px;
                 height: 40px;
             }
 
             @include size-page('phone-hd-max') {
+                width: 40px;
                 height: 40px;
             }
         }
