@@ -1,3 +1,5 @@
+@import '@style/size-pages';
+
 .packets {
     height: 80vh;
     padding-top: 20vh;
@@ -8,12 +10,40 @@
         font-size: 56px;
         text-align: center;
         margin-bottom: 25vh;
+
+        @include size-page('tablet-big') {
+            margin-bottom: 10vh;
+        }
+
+        @include size-page('tablet') {
+            margin-bottom: 10vh;
+        }
+
+        @include size-page('phone-hd-max') {
+            margin-bottom: 5vh;
+        }
     }
 
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 7vw;
+
+        @include size-page('tablet-big') {
+            display: flex;
+            flex-direction: column;
+            gap: 5vw;
+        }
+
+        @include size-page('tablet') {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include size-page('phone-hd-max') {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__preview {
@@ -59,6 +89,10 @@
         flex-direction: column;
         align-items: center;
         gap: 15px;
+
+        @include size-page('phone-hd-max') {
+            padding: 10px;
+        }
 
         &_close {
             position: absolute;
