@@ -5,7 +5,7 @@ import './Header.scss';
 import LogoIcon from '@assets/logo.svg?jsx';
 import { useNavigate } from "react-router-dom";
 
-const Header = ({ scrollTo, links }) => {
+export const Header = ({ scrollTo, links }) => {
     const nav = useNavigate();
 
     return <header className="header">
@@ -33,5 +33,3 @@ const Header = ({ scrollTo, links }) => {
         </div>
     </header >
 };
-
-export default Header;

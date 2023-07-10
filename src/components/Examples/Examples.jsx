@@ -1,61 +1,14 @@
 import React, { useEffect, useRef } from 'react';
-
-import FirstPortrait from '@assets/first_portrait.webp';
-import SecondPortrait from '@assets/second_portrait.webp';
-import ThirdPortrait from '@assets/third_portrait.webp';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './Examples.scss';
 
-const PHOTOS = [
-    {
-        photo: FirstPortrait,
-        alt: 'first',
-        text: 'Женский портрет'
-    },
-    {
-        photo: SecondPortrait,
-        alt: 'second',
-        text: 'Контент-съемка'
-    },
-    {
-        photo: ThirdPortrait,
-        alt: 'third',
-        text: 'Прогулка'
-    },
-    {
-        photo: FirstPortrait,
-        alt: 'first',
-        text: 'Женский портрет'
-    },
-    {
-        photo: SecondPortrait,
-        alt: 'second',
-        text: 'Контент-съемка'
-    },
-    {
-        photo: ThirdPortrait,
-        alt: 'third',
-        text: 'Прогулка'
-    },
-    {
-        photo: FirstPortrait,
-        alt: 'first',
-        text: 'Женский портрет'
-    },
-    {
-        photo: SecondPortrait,
-        alt: 'second',
-        text: 'Контент-съемка'
-    },
-    {
-        photo: ThirdPortrait,
-        alt: 'third',
-        text: 'Прогулка'
-    },
-];
-
 const Examples = () => {
+    const PHOTOS = useSelector(({ examples }) => examples.photos);
+
     const swiperEl = useRef(null);
+    const nav = useNavigate();
     useEffect(() => {
 
         const swiperParams = {

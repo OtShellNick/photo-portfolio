@@ -1,60 +1,22 @@
-import React, { useRef } from "react";
-import { register } from 'swiper/element/bundle';
+import React, { useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
-import Header from "@components/Header/Header";
-import Preview from "@components/Preview/Preview";
-import Description from "@components/Description/Description";
-import Examples from "@components/Examples/Examples";
-import Packets from "@components/Packets/Packets";
-import Reviews from "@components/Reviews/Reviews";
-import Feedback from "@components/Feedback/Feedback";
-import Footer from "@components/Footer/Footer";
-
-register();
+import { Main } from "@components/Main";
 
 const App = () => {
-    const previewRef = useRef(null);
-    const descRef = useRef(null);
-    const exampleRef = useRef(null);
-    const packetsRef = useRef(null);
-    const reviewsRef = useRef(null);
-    const feedbackRef = useRef(null);
+    const location = useLocation();
 
-    function scrollTo(section) {
-        section.current.scrollIntoView({ behavior: "smooth" });
-    }
+    useEffect(() => {
+        console.log(location)
+    }, [location])
 
-    return <>
-        <Header scrollTo={scrollTo} links={{
-            previewRef,
-            descRef,
-            exampleRef,
-            packetsRef,
-            reviewsRef,
-            feedbackRef
-        }} />
-        <main className="main" dir="ltr">
-            <div ref={previewRef}>
-                <Preview />
-            </div>
-            <div ref={descRef}>
-                <Description />
-            </div>
-            <div ref={exampleRef}>
-                <Examples />
-            </div>
-            <div ref={packetsRef}>
-                <Packets />
-            </div>
-            <div ref={reviewsRef}>
-                <Reviews />
-            </div>
-            <div ref={feedbackRef}>
-                <Feedback />
-            </div>
-        </main>
-        <Footer scrollTo={scrollTo} previewRef={previewRef} feedbackRef={feedbackRef} />
-    </>
+
+    return <Routes>
+        <Route path="/">
+            <Route index element={<Main />} />
+            <Route path="*" element={<div>404</div>} />
+        </Route>
+    </Routes>
 };
 
 export default App;

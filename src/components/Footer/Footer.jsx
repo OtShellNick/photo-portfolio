@@ -11,7 +11,7 @@ import PhoneIcon from '@assets/social/phone.svg?jsx';
 
 import './Footer.scss';
 
-const Footer = ({ scrollTo, feedbackRef, previewRef }) => {
+export const Footer = ({ scrollTo, feedbackRef, previewRef }) => {
 
     return <footer className='footer'>
         <div className="footer__wrapper container">
@@ -66,5 +66,3 @@ const Footer = ({ scrollTo, feedbackRef, previewRef }) => {
         </div>
     </footer>
 };
-
-export default Footer;

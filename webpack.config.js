@@ -54,9 +54,11 @@ const plugins = () => [
     }),
     new HTMLWebpackPlugin({
         template: './src/index.html',
+        publicPath: '/'
     }),
     new CleanWebpackPlugin(),
     new FontPreloadPlugin({
+        index: "./src/index.html",
         loadType: 'preload',
     }),
     new MiniCssExtractPlugin({
@@ -147,7 +149,7 @@ module.exports = {
         ],
     },
     devServer: {
-        port: 8088,
+        port: 8089,
         static: './build',
         historyApiFallback: true,
         compress: true,
